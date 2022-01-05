@@ -1,0 +1,37 @@
+<div class="card mt-5">
+  <div class="card-header">
+
+    <a class="btn btn-success me-2" routerLink="/agregar-solicitud">Agregar nuevo</a>
+
+  </div>
+  <div class="card-body">
+    <h1>Lista de solicitudes</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>codigo</th>
+          <th>Descripción</th>
+          <th>Resumen</th>
+          <th>Responsable</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let solicitud of Solicitud; let fila = index">
+          <td>{{solicitud.id}}</td>
+          <td>{{solicitud.codigo}}</td>
+          <td>{{solicitud.descripcion}}</td>
+          <td>{{solicitud.resumen}}</td>
+          <td>{{solicitud.empleado}}</td>
+          <td>
+            <a class="btn btn-primary me-2" routerLink="/editar-solicitud/{{solicitud.id}}">Editar</a>
+            <a class="btn btn-danger" (click)="borrarRegistro(solicitud.id,fila)" role="button">Borra</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>

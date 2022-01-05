@@ -1,0 +1,39 @@
+<div class="card mt-5">
+  <div class="card-header">
+    Editar solicitud
+  </div>
+  <div class="card-body">
+
+    <form ngNativeValidate [formGroup]="formularioSolicitud" (ngSubmit)="agregarSolicitud()">
+
+      <div class="mb-3">
+        <label for="" class="form-label">Código:</label>
+        <input type="text" class="form-control" formControlName="codigo" required aria-describedby="helpId" placeholder="Codigo de la solicitud">
+      </div>
+
+      <div class="mb-3">
+        <label for="" class="form-label">Descripción:</label>
+        <input type="text" class="form-control" formControlName="descripcion" required aria-describedby="helpId" placeholder="¿Qué ha pasado?">
+      </div>
+
+      <div class="mb-3">
+        <label for="" class="form-label">Resumen:</label>
+        <input type="text" class="form-control" formControlName="resumen" required aria-describedby="helpId" placeholder="Nombre del proyecto">
+      </div>
+      <div class="mb-3">
+        <label for="" class="form-label">Responsable:</label>
+        <select class="form-control" formControlName="id_empleado" required>
+          <!-- <option [value]="">Seleccionar</option> -->
+          <option *ngFor="let empleado of Empleado" [value]="empleado.id">{{empleado.nombre}}</option>
+        </select>
+      </div>
+
+      <div class="btn-group" role="group" aria-label="">
+        <button type="submit" class="btn btn-success">Agregar</button>
+        <button type="button" routerLink="/listar-empleado" class="btn btn-primary">Cancelar</button>
+      </div>
+    </form>
+
+  </div>
+
+</div>

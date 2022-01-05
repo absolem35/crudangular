@@ -1,0 +1,33 @@
+<div class="card mt-5">
+  <div class="card-header">
+    Editar empleado
+  </div>
+  <div class="card-body">
+
+    <form ngNativeValidate [formGroup]="formularioEmpleado" (ngSubmit)="agregarDatos()">
+
+      <div class="mb-3">
+        <label for="" class="form-label">Nombre completo:</label>
+        <input type="text" class="form-control" formControlName="nombre" required aria-describedby="helpId" placeholder="Escribe tu nombre">
+      </div>
+
+      <div class="mb-3">
+        <label for="" class="form-label">Fecha de ingreso:</label>
+        <input type="date" class="form-control" formControlName="fecha_ingreso" required aria-describedby="helpId" placeholder="Elige una fecha">
+      </div>
+
+      <div class="mb-3">
+        <label for="" class="form-label">Salario:</label>
+        <input type="number" class="form-control" formControlName="salario" required aria-describedby="helpId" placeholder="Salario actual">
+      </div>
+
+      <div class="btn-group" role="group" aria-label="">
+        <button type="submit" class="btn btn-warning">Actualizar</button>
+        <button type="button" routerLink="/listar-empleado" class="btn btn-primary">Cancelar</button>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

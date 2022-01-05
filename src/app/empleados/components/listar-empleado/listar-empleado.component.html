@@ -1,0 +1,35 @@
+<div class="card mt-5">
+  <div class="card-header">
+
+    <a class="btn btn-success me-2" routerLink="/agregar-empleado">Agregar nuevo</a>
+
+  </div>
+  <div class="card-body">
+    <h1>Lista Empleados</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Fecha de ingreso</th>
+          <th>Salario</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empleado of Empleados; let fila = index">
+          <td>{{empleado.id}}</td>
+          <td>{{empleado.nombre}}</td>
+          <td>{{empleado.fecha_ingreso}}</td>
+          <td>{{empleado.salario | number}}</td>
+          <td>
+            <a class="btn btn-primary me-2" routerLink="/editar-empleado/{{empleado.id}}">Editar</a>
+            <a class="btn btn-danger" (click)="borrarRegistro(empleado.id,fila)" role="button">Borra</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
